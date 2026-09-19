@@ -1,5 +1,3 @@
-# Trip Planner
-This is my Trip Planner Project
 # ✈️ Trip Planner
 
 A web application designed to help users efficiently plan and manage their trips.
@@ -10,8 +8,8 @@ A web application designed to help users efficiently plan and manage their trips
 - Backend routing to process planner inputs.
 
 ## 🛠️ Tech Stack
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Backend:** Node.js, Express.js
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js (server.js)
 
 ## ⚙️ How to Run Locally
 
