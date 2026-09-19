@@ -15,4 +15,4 @@ A web application designed to help users efficiently plan and manage their trips
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/aasthajaiswal157/Trip-Planner.git](https://github.com/aasthajaiswal157/Trip-Planner.git)
+   git clone https://github.com/aasthajaiswal157/Trip-Planner.git
