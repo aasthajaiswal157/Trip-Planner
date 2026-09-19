@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Planner</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+    .form-container { max-width: 550px; margin: 20px auto; background: #ffffff; padding: 25px 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    h2 { text-align: center; color: #333; margin-bottom: 5px; }
+    p.subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 25px; }
+    .form-group { margin-bottom: 18px; }
+    label { display: block; margin-bottom: 6px; font-weight: 600; color: #444; font-size: 14px; }
+    input, select, textarea { width: 100%; padding: 10px 12px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
+    input:focus, select:focus, textarea:focus { border-color: #007bff; outline: none; }
+    button { background-color: #007bff; color: white; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background-color 0.2s; }
+    button:hover { background-color: #0056b3; }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Trip Planner</h2>
+  <p class="subtitle">Kripya trip se judi apni details aur budget yahan bharein</p>
+  
+  <form id="tripPlannerForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+    
+    <!-- AUTHOR EMAIL (Ye Student ko NAHI dikhega, Hidden Rahega) -->
+    <input type="hidden" id="authorEmail" name="_replyto" value="default-author@gmail.com">
+
+    <!-- 1. STUDENT NAME -->
+    <div class="form-group">
+      <label for="studentName">Student Name : *</label>
+      <input type="text" id="studentName" name="Student_Name" placeholder="अपना पूरा नाम दर्ज करें" required>
+    </div>
+
+    <!-- 2. STUDENT EMAIL (Optional) -->
+    <div class="form-group">
+      <label for="studentEmail">Student Email ( Optional):</label>
+      <input type="email" id="studentEmail" name="Student_Email" placeholder="अपना ईमेल आईडी दर्ज करें">
+    </div>
+
+    <!-- 3. TRIP DESTINATION -->
+    <div class="form-group">
+      <label for="tripDestination">Trip Destination : *</label>
+      <input type="text" id="tripDestination" name="Trip_Destination" placeholder="जैसे: मनाली, गोवा, जयपुर, नैनीताल" required>
+    </div>
+
+    <!-- 4. TRIP DURATION (DAYS) -->
+    <div class="form-group">
+      <label for="tripDays">Trip Duration : *</label>
+      <input type="number" id="tripDays" name="Trip_Duration_Days" placeholder="जैसे: 3 या 5 दिन" min="1" required>
+    </div>
+
+    <!-- 5. STUDENT BUDGET / AMOUNT -->
+    <div class="form-group">
+      <label for="studentBudget">Max Budget / Total Amount You Can Pay (₹): *</label>
+      <input type="number" id="studentBudget" name="Student_Budget_INR" placeholder="जैसे: 3000" min="0" required>
+    </div>
+
+    <!-- 6. ADDITIONAL NOTES / STATEMENT -->
+    <div class="form-group">
+      <label for="studentNotes">Additional Notes / Statement :</label>
+      <textarea id="studentNotes" name="Student_Notes" rows="3" placeholder="जैसे: भोजन (Food), रहने का प्रबंध, आदि..."></textarea>
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <button type="submit">Submit Trip Form</button>
+  </form>
+</div>
+
+<!-- JAVASCRIPT: Dynamic Author Email Logic -->
+<script>
+  // URL Parameter se Author ka email read karne ke liye
+  // Example: site-url.onrender.com/?author=teacher@gmail.com
+  const urlParams = new URLSearchParams(window.location.search);
+  const authorEmailFromUrl = urlParams.get('author');
+
+  if (authorEmailFromUrl) {
+    document.getElementById('authorEmail').value = authorEmailFromUrl;
+  }
+</script>
+
+</body>
+</html>
